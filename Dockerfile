@@ -7,7 +7,10 @@ COPY src /opt/did-api/src
 COPY Cargo.toml /opt/did-api
 COPY Cargo.lock /opt/did-api
 
-RUN cargo build --release
+RUN apt-get update \
+    && apt-get install -y build-essential \
+    && apt-get install pkg-config libssl-dev \
+    && cargo build --release
 
 FROM debian:latest
 RUN apt-get update && apt-get install -y --no-install-recommends \
