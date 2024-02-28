@@ -29,11 +29,11 @@ impl IssuerBuilder {
 
         // Primay Node Url
         let private_node = &std::env::var("PRIMARY_NODE_HORNET")
-            .unwrap_or("https://api.lb-0.h.chrysalis-devnet.iota.cafe".to_string());
+            .unwrap_or("https://api.testnet.shimmer.network/".to_string());
 
         // Primay Node Url
         let private_pow_node = &std::env::var("PRIMARY_POW_NODE_HORNET")
-            .unwrap_or("https://api.lb-1.h.chrysalis-devnet.iota.cafe".to_string());
+            .unwrap_or("https://api.testnet.shimmer.network/".to_string());
 
         let stronghold: Stronghold = Stronghold::new(&stronghold_path, password, Some(true))
             .await
